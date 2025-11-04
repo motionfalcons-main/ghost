@@ -38,7 +38,7 @@ services:
           name: ghost-db
           property: database
       - key: url
-        value: https://your-site.onrender.com
+        sync: false
       - key: mail__transport
         value: SMTP
       - key: mail__options__service
