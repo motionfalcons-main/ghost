@@ -1,0 +1,57 @@
+{
+  "url": "https://your-site.onrender.com",
+  "server": {
+    "port": 2368,
+    "host": "0.0.0.0"
+  },
+  "database": {
+    "client": "mysql",
+    "connection": {
+      "host": "localhost",
+      "port": 3306,
+      "user": "ghost",
+      "password": "your_password",
+      "database": "ghost_production"
+    },
+    "pool": {
+      "min": 2,
+      "max": 10
+    }
+  },
+  "mail": {
+    "transport": "SMTP",
+    "options": {
+      "service": "SendGrid",
+      "host": "smtp.sendgrid.net",
+      "port": 587,
+      "auth": {
+        "user": "apikey",
+        "pass": "YOUR_SENDGRID_API_KEY"
+      }
+    }
+  },
+  "logging": {
+    "level": "info",
+    "rotation": {
+      "enabled": true,
+      "count": 10,
+      "period": "1d"
+    },
+    "transports": [
+      "stdout"
+    ]
+  },
+  "paths": {
+    "contentPath": "content/"
+  },
+  "privacy": {
+    "useUpdateCheck": false
+  },
+  "useMinFiles": true,
+  "caching": {
+    "frontend": {
+      "maxAge": 0
+    }
+  }
+}
+

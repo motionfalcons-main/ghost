@@ -1,0 +1,67 @@
+# Render Deploy - Files to ignore during deployment
+
+# Development files
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+.c8
+coverage/
+coverage-e2e/
+coverage-integration/
+test/
+
+# E2E tests
+e2e/
+
+# Documentation
+docs/
+*.md
+!README.md
+!RENDER_DEPLOYMENT.md
+!ENVIRONMENT_VARIABLES.md
+
+# Git
+.git/
+.github/
+.gitignore
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build artifacts (will be rebuilt on Render)
+.nx/
+dist/
+build/
+*.tsbuildinfo
+
+# Development database
+ghost/core/content/data/*.db
+ghost/core/content/data/*.db-*
+
+# Temporary files
+tmp/
+temp/
+
+# Docker
+docker-compose.yml
+compose.yml
+Dockerfile
+.docker/
+
+# Development scripts
+.github/scripts/dev.js
+.github/scripts/dev-with-tinybird.js
+

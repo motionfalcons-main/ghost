@@ -1,0 +1,74 @@
+services:
+  - type: web
+    name: ghost
+    env: node
+    region: oregon
+    plan: starter
+    buildCommand: yarn render:build
+    startCommand: yarn render:start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: database__client
+        value: mysql
+      - key: database__connection__host
+        fromDatabase:
+          name: ghost-db
+          property: host
+      - key: database__connection__port
+        fromDatabase:
+          name: ghost-db
+          property: port
+      - key: database__connection__user
+        fromDatabase:
+          name: ghost-db
+          property: user
+      - key: database__connection__password
+        fromDatabase:
+          name: ghost-db
+          property: password
+      - key: database__connection__database
+        fromDatabase:
+          name: ghost-db
+          property: database
+      - key: url
+        value: https://your-site.onrender.com
+      - key: mail__transport
+        value: SMTP
+      - key: mail__options__service
+        sync: false
+      - key: mail__options__host
+        sync: false
+      - key: mail__options__port
+        sync: false
+      - key: mail__options__auth__user
+        sync: false
+      - key: mail__options__auth__pass
+        sync: false
+      # Storage - Local by default, but you should use S3 or similar for production
+      - key: storage__active
+        value: local
+      # Optional: Configure S3/CloudFront for file storage
+      # - key: storage__active
+      #   value: s3
+      # - key: storage__s3__accessKeyId
+      #   sync: false
+      # - key: storage__s3__secretAccessKey
+      #   sync: false
+      # - key: storage__s3__region
+      #   value: us-east-1
+      # - key: storage__s3__bucket
+      #   sync: false
+      # - key: storage__s3__assetHost
+      #   sync: false
+    disk:
+      name: ghost-content
+      mountPath: /opt/render/project/src/ghost/core/content
+      sizeGB: 10
+
+databases:
+  - name: ghost-db
+    databaseName: ghost_production
+    user: ghost
+    plan: starter
+
