@@ -40,17 +40,9 @@ services:
       - key: url
         sync: false
       - key: mail__transport
-        value: SMTP
-      - key: mail__options__service
-        sync: false
-      - key: mail__options__host
-        sync: false
-      - key: mail__options__port
-        sync: false
-      - key: mail__options__auth__user
-        sync: false
-      - key: mail__options__auth__pass
-        sync: false
+        value: Direct
+      - key: mail__from
+        value: noreply@localhost
       # Storage - Local by default, but you should use S3 or similar for production
       - key: storage__active
         value: local
