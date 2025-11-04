@@ -9,6 +9,12 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: PORT
+        value: 10000
+      - key: server__host
+        value: 0.0.0.0
+      - key: server__port
+        value: 10000
       - key: database__client
         value: postgres
       - key: database__connection__host
