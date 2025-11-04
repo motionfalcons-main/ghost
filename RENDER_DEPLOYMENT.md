@@ -27,12 +27,14 @@ Ensure your Ghost repository is on GitHub with all changes committed.
 The following environment variables are **required**:
 
 #### Database (Auto-configured if using Render's managed database)
-- `database__client` = `mysql`
+- `database__client` = `postgres`
 - `database__connection__host` (from database)
 - `database__connection__port` (from database)
 - `database__connection__user` (from database)
 - `database__connection__password` (from database)
 - `database__connection__database` (from database)
+
+**Note:** Render's managed databases use PostgreSQL. Ghost works perfectly with PostgreSQL!
 
 #### Site Configuration
 - `url` = Your site URL (e.g., `https://your-site.onrender.com`)

@@ -60,8 +60,10 @@ mail__options__auth__pass=YOUR_SENDGRID_API_KEY
 
 ### Services (from `render.yaml`)
 - ✅ **Web Service** - Ghost application (Node.js)
-- ✅ **MySQL Database** - Production database (managed)
+- ✅ **PostgreSQL Database** - Production database (managed by Render)
 - ✅ **Persistent Disk** - 10GB for content storage
+
+**Note:** Ghost works perfectly with PostgreSQL! Render's managed databases use PostgreSQL (not MySQL).
 
 ### Build Process
 ```bash

@@ -11,10 +11,10 @@ url=https://your-site.onrender.com
 ```
 
 ### Database Configuration
-*These are automatically configured when using Render's managed MySQL database*
+*These are automatically configured when using Render's managed PostgreSQL database*
 
 ```bash
-database__client=mysql
+database__client=postgres
 database__connection__host=<from_render_database>
 database__connection__port=<from_render_database>
 database__connection__user=<from_render_database>
