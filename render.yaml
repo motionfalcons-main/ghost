@@ -10,7 +10,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: database__client
-        value: mysql
+        value: postgres
       - key: database__connection__host
         fromDatabase:
           name: ghost-db
@@ -70,5 +70,6 @@ databases:
   - name: ghost-db
     databaseName: ghost_production
     user: ghost
-    plan: starter
+    plan: free
+    ipAllowList: []
 
