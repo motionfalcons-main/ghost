@@ -18,25 +18,17 @@ services:
       - key: database__client
         value: postgres
       - key: database__connection__host
-        fromDatabase:
-          name: ghost-db
-          property: host
+        sync: false
       - key: database__connection__port
-        fromDatabase:
-          name: ghost-db
-          property: port
+        value: 5432
       - key: database__connection__user
-        fromDatabase:
-          name: ghost-db
-          property: user
+        sync: false
       - key: database__connection__password
-        fromDatabase:
-          name: ghost-db
-          property: password
+        sync: false
       - key: database__connection__database
-        fromDatabase:
-          name: ghost-db
-          property: database
+        sync: false
+      - key: database__connection__ssl
+        value: true
       - key: url
         sync: false
       - key: mail__transport
@@ -64,10 +56,6 @@ services:
       mountPath: /opt/render/project/src/ghost/core/content
       sizeGB: 10
 
-databases:
-  - name: ghost-db
-    databaseName: ghost_production
-    user: ghost
-    plan: standard
-    region: oregon
+# Database will be created manually in Render dashboard
+# Then connect it via environment variables
 
