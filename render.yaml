@@ -68,6 +68,6 @@ databases:
   - name: ghost-db
     databaseName: ghost_production
     user: ghost
-    plan: free
+    plan: basic
     region: oregon
 
