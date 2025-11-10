@@ -69,5 +69,6 @@ databases:
     databaseName: ghost_production
     user: ghost
     plan: free
+    region: oregon
     ipAllowList: []
 
